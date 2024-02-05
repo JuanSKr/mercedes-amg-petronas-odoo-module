@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="categoria_modulo_pieza" model="ir.module.category">
+        <field name="name">Gestión de Piezas</field>
+        <field name="description">Modulo de pieza</field>
+    </record>
+    <record id="pieza_group_user" model="res.groups">
+        <field name="name">Usuario</field>
+        <field name="category_id" ref="categoria_modulo_pieza"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>

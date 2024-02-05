@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <!-- Vista formulario para Ingenieros -->
+    <record id="ingeniero_form_view" model="ir.ui.view">
+        <field name="name">ingeniero.form.view</field>
+        <field name="model">ingenieros</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <field name="name"/>
+                        <field name="experiencia"/>
+                        <field name="especialidad"/>
+                        <field name="fecha_contratacion"/>
+                        <field name="salario"/>
+                        <field name="piloto_id"/>
+                        <field name="fabrica"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista árbol para Ingenieros -->
+    <record id="ingeniero_tree_view" model="ir.ui.view">
+        <field name="name">ingeniero.tree.view</field>
+        <field name="model">ingenieros</field>
+        <field name="arch" type="xml">
+            <tree string="Ingenieros">
+                <field name="name"/>
+                <field name="experiencia"/>
+                <field name="especialidad"/>
+                <field name="fecha_contratacion"/>
+                <field name="salario"/>
+                <field name="piloto_id"/>
+                <field name="fabrica"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista kanban para Ingenieros -->
+    <record id="ingeniero_kanban_view" model="ir.ui.view">
+        <field name="name">ingeniero.kanban.view</field>
+        <field name="model">ingenieros</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_image">
+                                <img t-att-src="kanban_image('ingenieros','image',record.id.raw_value)" style="width:100px; height:100px; object-fit: cover;" alt="Image"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title oe_partner_heading">
+                                             <field name="name"/>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

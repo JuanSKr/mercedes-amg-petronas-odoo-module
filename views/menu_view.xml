@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="action_piezas" model="ir.actions.act_window">
+        <field name="name">Piezas</field>
+        <field name="res_model">piezas</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="action_piloto" model="ir.actions.act_window">
+        <field name="name">Pilotos</field>
+        <field name="res_model">piloto</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="action_ingenieros" model="ir.actions.act_window">
+        <field name="name">Ingenieros</field>
+        <field name="res_model">ingenieros</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="action_fabrica" model="ir.actions.act_window">
+        <field name="name">Fábricas</field>
+        <field name="res_model">fabrica</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="action_motor" model="ir.actions.act_window">
+        <field name="name">Motores</field>
+        <field name="res_model">motores</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <record id="motor_graph_view" model="ir.ui.view">
+        <field name="name">motor.graph.view</field>
+        <field name="model">motores</field>
+        <field name="arch" type="xml">
+            <graph string="Comparación de Motores" type="bar">
+                <field name="name" type="row"/>
+                <field name="potencia" type="measure"/>
+                <field name="rpm_max" type="measure"/>
+                <field name="torque_max" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_motor_graph" model="ir.actions.act_window">
+        <field name="name">Comparación de Motores</field>
+        <field name="res_model">motores</field>
+        <field name="view_mode">graph</field>
+    </record>
+    
+    <menuitem name="Gestión Mercedes AMG Petronas F1 Team" id="menu_fabrica" />
+    <menuitem name="Piezas" id="menu_piezas" parent="menu_fabrica" action="action_piezas" />
+    <menuitem name="Pilotos" id="menu_piloto" parent="menu_fabrica" action="action_piloto" />
+    <menuitem name="Ingenieros" id="menu_ingenieros" parent="menu_fabrica" action="action_ingenieros" />
+    <menuitem name="Fabricas" id="menu_fabrica_fabricas" parent="menu_fabrica" action="action_fabrica" />
+    <!-- Menú de Motores -->
+    <menuitem name="Motores" id="menu_motor_main" parent="menu_fabrica" />
+    <menuitem name="Lista de Motores" id="menu_motor_list" parent="menu_motor_main" action="action_motor" sequence="1"/>
+    <menuitem name="Comparación de Motores" id="menu_motor_graph" parent="menu_motor_main" action="action_motor_graph" sequence="2"/>
+</odoo>

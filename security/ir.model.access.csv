@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_piezas_user,Acceso a piezas,model_piezas,pieza_group_user,1,1,1,1
+access_piloto_user,Acceso a pilotos,model_piloto,pieza_group_user,1,1,1,1
+access_fabrica_user,Acceso a fabrica,model_fabrica,pieza_group_user,1,1,1,1
+access_motor_user,Acceso a motores,model_motores,pieza_group_user,1,1,1,1
+access_ingeniero_user,Acceso a ingenieros,model_ingenieros,pieza_group_user,1,1,1,1
