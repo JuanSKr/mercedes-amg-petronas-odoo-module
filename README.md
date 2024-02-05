@@ -15,7 +15,7 @@ This custom Odoo module provides a comprehensive solution for managing Formula 1
 2. **Custom Models:**
    - Includes five custom models with specific relationships and views.
 
-   - **Part:**
+   - **Car Parts:**
       - Relationships with the Driver and Factory models.
       - Selection field and calculated field.
       - Available views: Tree and Kanban.
